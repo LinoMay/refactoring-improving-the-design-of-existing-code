@@ -1,27 +1,32 @@
 package chapter01.ver01;
 
+/**
+ * description: 电影bean
+ * date: 2018/9/28 21:30
+ * @author Meif
+ */
 public class Movie {
 	public static final int CHILDRENS = 2;
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
-	private String _title;
-	private int _priceCode;
+	private String title;
+	private int priceCode;
 
 	public Movie(String title, int priceCode) {
-		_title = title;
-		_priceCode = priceCode;
+		this.title = title;
+		this.priceCode = priceCode;
 	}
 
 	public int getPriceCode() {
-		return _priceCode;
+		return priceCode;
 	}
 
 	public String getTitle() {
-		return _title;
+		return title;
 	}
 
 	public void setPriceCode(int priceCode) {
-		_priceCode = priceCode;
+		this.priceCode = priceCode;
 	}
 
 }

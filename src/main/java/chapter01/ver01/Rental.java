@@ -1,19 +1,26 @@
 package chapter01.ver01;
 
+/**
+ * description: 租借bean
+ * date: 2018/9/28 21:29
+ * @author Lino
+ */
 public class Rental {
-	private Movie _movie; // 影片
-	private int _daysRented; // 租期
+	/** 影片 */
+	private Movie movie;
+	/** 租期 */
+	private int daysRented;
 
 	public Rental(Movie movie, int daysRented) {
-		_movie = movie;
-		_daysRented = daysRented;
+		this.movie = movie;
+		this.daysRented = daysRented;
 	}
 
 	public int getDaysRented() {
-		return _daysRented;
+		return daysRented;
 	}
 
 	public Movie getMovie() {
-		return _movie;
+		return movie;
 	}
 }
