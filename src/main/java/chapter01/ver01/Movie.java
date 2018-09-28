@@ -10,23 +10,49 @@ public class Movie {
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
 	private String title;
-	private int priceCode;
+	private Price price;
+
+	public Price getPrice() {
+		return price;
+	}
+
+	public void setPrice(Price price) {
+		this.price = price;
+	}
 
 	public Movie(String title, int priceCode) {
 		this.title = title;
-		this.priceCode = priceCode;
+		setPriceCode(priceCode);
 	}
 
-	public int getPriceCode() {
-		return priceCode;
-	}
 
 	public String getTitle() {
 		return title;
 	}
 
 	public void setPriceCode(int priceCode) {
-		this.priceCode = priceCode;
+		switch (priceCode) {
+			case REGULAR:
+				price = new RegularPrice();
+				break;
+			case NEW_RELEASE:
+				price = new NewReleasePrice();
+				break;
+			case CHILDRENS:
+				price = new ChildrensPrice();
+				break;
+			default:
+				throw new IllegalArgumentException("没有此价格！");
+		}
+	}
+
+	public double getCharge(int daysRented) {
+
+		return price.getCharge(daysRented);
+	}
+
+	public int getFrequentRenterPoints(int daysRented) {
+		return price.getFrequentRenterPoints(daysRented);
 	}
 
 }

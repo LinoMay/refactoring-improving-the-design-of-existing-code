@@ -23,4 +23,13 @@ public class Rental {
 	public Movie getMovie() {
 		return movie;
 	}
+
+	// 重构第1步：方法抽离
+	public double getCharge() {
+		return getMovie().getCharge(getDaysRented());
+	}
+
+	public int getFrequentRenterPoints() {
+		return getMovie().getFrequentRenterPoints(getDaysRented());
+	}
 }
